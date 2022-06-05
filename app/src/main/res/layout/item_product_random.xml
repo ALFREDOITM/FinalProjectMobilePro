@@ -1,15 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="15dp">
-<ImageView
-    android:id="@+id/proImage"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="15dp">
 
-    />
+    <ImageView
+        android:id="@+id/ProductThumbnail"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:background="@color/translucent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+    <TextView
+        android:id="@+id/ProductName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="14dp"
+        android:text="Example of product name"
+        android:maxLines="1"
+        android:textColor="@color/teal_700"
+        app:layout_constraintTop_toBottomOf="@id/ProductThumbnail"
+        app:layout_constraintLeft_toLeftOf="@id/ProductThumbnail"
+        app:layout_constraintRight_toRightOf="@id/ProductThumbnail"
+        app:layout_constraintBottom_toTopOf="@id/ProductRating"
+        />
+    <RatingBar
+        android:id="@+id/ProductRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rating="3.5"
+        android:progressTint="@color/yellow"
+        app:layout_constraintTop_toBottomOf="@id/ProductName"
+        app:layout_constraintLeft_toLeftOf="@id/ProductThumbnail"
+        app:layout_constraintBottom_toTopOf="@id/ProductReviews"
+        style="?android:attr/ratingBarStyleSmall"
+        />
+    <TextView
+        android:id="@+id/ProductReviews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantity of reviews"
+        android:textSize="10dp"
+        app:layout_constraintTop_toBottomOf="@id/ProductRating"
+        app:layout_constraintLeft_toLeftOf="@id/ProductThumbnail"
+        app:layout_constraintBottom_toTopOf="@id/ProductCost"
+        />
+    <TextView
+        android:id="@+id/ProductCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$un monton"
+        android:textSize="16dp"
+        android:textColor="@color/redBrown"
+        app:layout_constraintTop_toBottomOf="@id/ProductReviews"
+        app:layout_constraintLeft_toLeftOf="@id/ProductThumbnail"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
