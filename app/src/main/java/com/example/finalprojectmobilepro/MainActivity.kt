@@ -63,25 +63,5 @@ class MainActivity : AppCompatActivity() {
         })
 
 
-        fun getProductList(){
-            val url = "https://fakestoreapi.com/products/?limit=9"
-            val stringRequest = StringRequest(url, Response.Listener<String>{ response ->
-                val jsonArray = JSONArray(response.toString())
-                Log.i("JSONRESPONSE", jsonArray.toString())
-                binding.rvPokeEntries.adapter = MainAdapter(jsonArray)
-            },
-                Response.ErrorListener { error ->
-                    Log.w("JSONRESPONSE", error.message as String)
-                })
-
-            queue.add(stringRequest)
-        }
-
-
-        override fun onStop() {
-            super.onStop()
-            queue.cancelAll("Stopped")
-        }
-
     }
 }
