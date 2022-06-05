@@ -21,7 +21,6 @@ class InsideHomeAdapter(private val products: JSONArray): RecyclerView.Adapter<I
 
     class ProductHolder(val binding: ItemProductRandomBinding): RecyclerView.ViewHolder(binding.root){
         fun render(product: JSONObject){
-            //binding.proName.setText(pokemon.getString("title"))
             binding.ProductName.setText(product.getString("title"))
             binding.ProductReviews.setText(product.getString("count"))
             binding.ProductCost.setText((product.getString("price")))
